@@ -12,9 +12,9 @@ debt <- tibble(country = c("USA", "USA", "DE", "DE"),
 
 debt_plot <- ggplot(data = debt) +
   geom_line(aes(x = year, y = debt_gdp, color = country), 
-            lineend = "round", linejoin = "round", size = 2,
-            arrow = arrow(length = unit(0.3, "inches"))) +
-  geom_label(aes(x=year, y = .8, label = year), size = 3) +
+            lineend = "butt", linejoin = "round", size = 1,
+            arrow = arrow(length = unit(0.1, "inches"))) +
+  geom_label(aes(x=year, y = .8, label = year, color = country), size = 3) +
   scale_y_continuous(labels = scales::percent, limits = c(0, 1.5)) +
   xlim(2019.8, 2021.2) +
   scale_color_manual(values = c("#B6270D", "#080A86")) +
